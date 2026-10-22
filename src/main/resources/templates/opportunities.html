@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050b17"><title>NEXORA | Opportunities Hub</title>
+<link rel="stylesheet" href="/css/dashboard.css?v=20261013-final-review-r2"><link rel="stylesheet" href="/css/nexora-ui.css?v=20261013-final-review-r2">
+<style>
+.opp-main{max-width:1600px;margin:auto;padding:26px clamp(14px,2.5vw,34px) 54px;color:#eef6ff}
+.opp-hero{position:relative;overflow:hidden;border:1px solid #283a72;border-radius:20px;padding:clamp(22px,4vw,42px);background:radial-gradient(650px 280px at 85% 0%,#27206c88,transparent 65%),linear-gradient(130deg,#10112e,#07192b 60%,#052032)}
+.opp-kicker{display:inline-flex;padding:6px 10px;border:1px solid #6544ca;border-radius:7px;background:#24144b;color:#d6c7ff;font-size:10px;font-weight:850;letter-spacing:.08em}
+.opp-hero h1{font-size:clamp(28px,4vw,42px);letter-spacing:-.04em;margin:15px 0 9px}.opp-hero p{max-width:760px;color:#afc5df;line-height:1.65}
+.opp-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.opp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 15px;border-radius:9px;text-decoration:none;font-size:12px;font-weight:800;border:1px solid #365b89;background:#0a2037;color:#e9f5ff}.opp-btn.primary{background:linear-gradient(110deg,#5426ff,#3217d7);border-color:#6d4cff;color:white}
+.opp-categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:16px 0}
+.opp-category{display:block;text-decoration:none;color:inherit;border:1px solid #183b5b;border-radius:13px;padding:15px;background:linear-gradient(145deg,#081c2e,#041321);min-width:0}.opp-category .ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#30207d;color:#fff;font-size:20px;margin-bottom:12px}.opp-category h2{font-size:14px;margin:0 0 6px}.opp-category p{font-size:11px;line-height:1.5;color:#9cb4ce;margin:0}
+
+@media(max-width:950px){.opp-categories{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.opp-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.opp-hero h1{font-size:28px}}
+</style>
+</head>
+<body class="nx-dashboard">
+
+<div class="dashboard-shell">
+<aside class="sidebar">
+<a class="brand" href="/dashboard" aria-label="NEXORA dashboard"><img src="/images/nexora-logo.svg" alt="NEXORA"></a>
+<nav aria-label="NEXORA navigation">
+<a href="/dashboard"><span>⌂</span><b>Dashboard</b></a><a href="/career"><span>✦</span><b>Career Guidance</b></a><a href="/academic"><span>◈</span><b>Academic Development</b></a><a href="/career-selection"><span>◎</span><b>Career Selection</b></a><a href="/development-gps"><span>↗</span><b>Development GPS</b></a><a href="/opportunities" class="active" aria-current="page"><span>✧</span><b>Opportunities Hub</b></a><a href="/recommended-courses"><span>◇</span><b>Recommended Courses</b></a><a href="/achievements"><span>✹</span><b>Achievements</b></a><a href="/integrations"><span>⌁</span><b>Connections</b></a><a href="/grade-calculator"><span>∑</span><b>SGPA / CGPA Calculator</b></a>
+</nav><div class="sidebar-bottom"><a href="/settings"><span>⚙</span><b>Settings</b></a><a href="/logout/confirm" class="sidebar-logout" aria-label="Log out of NEXORA"><span aria-hidden="true">⇥</span><b>Logout</b></a></div>
+</aside>
+<main class="content opp-main">
+<section class="opp-hero"><span class="opp-kicker">NEXORA OPPORTUNITIES HUB</span><h1>Find your next opportunity.</h1><p>Explore live hackathons, internships, jobs, workshops, competitions and learning opportunities from Unstop. Listings are served by Unstop, so expired opportunities and current availability are not fabricated by NEXORA.</p><div class="opp-actions"><a class="opp-btn primary" href="https://unstop.com/" target="_blank" rel="noopener noreferrer">Explore Unstop ↗</a></div></section>
+<section class="opp-categories" aria-label="Opportunity categories">
+<article class="opp-category"><div class="ico">⌘</div><h2>Hackathons</h2><p>Build projects, solve challenges and compete with other teams.</p></article>
+<article class="opp-category"><div class="ico">♙</div><h2>Internships</h2><p>Explore practical work experience and early-career roles.</p></article>
+<article class="opp-category"><div class="ico">▱</div><h2>Jobs</h2><p>Discover openings and review the original listing details.</p></article>
+<article class="opp-category"><div class="ico">✦</div><h2>Workshops & events</h2><p>Find workshops, webinars, competitions and campus events.</p></article>
+<article class="opp-category"><div class="ico">◇</div><h2>Courses & challenges</h2><p>Find learning programmes and skill-based challenges.</p></article>
+</section>
+
+</main></div>
+</body></html>

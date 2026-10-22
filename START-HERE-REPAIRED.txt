@@ -1,0 +1,12 @@
+NEXORA REPAIRED CANDIDATE BUILD — 13 OCTOBER 2026
+
+IMPORTANT: This is a fresh project folder. Do not reopen an older extracted folder named `nexora_edit` by mistake.
+
+1. Open this folder in IntelliJ IDEA (the `pom.xml` in this same folder is the project root).
+2. Select JDK 21.
+3. Configure MySQL using `.env.example` / application configuration.
+4. Configure SMTP only if demonstrating real OTP email delivery.
+5. Start the `NexoraApplication` run configuration and inspect the console logs.
+6. Use `REPAIR-AUDIT-2026-10-13.md` for the change list and the exact runtime checks still required.
+
+This package has passed source/template static checks and ZIP integrity checks. A fresh Maven build and live database/SMTP test were not possible in the packaging environment; do not treat static checks as a runtime guarantee.

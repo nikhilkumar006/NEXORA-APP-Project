@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEXORA | Career Selection</title><link rel="stylesheet" href="/css/nexora-ui.css?v=20261013-targeted-r3"><style>
+.cs-wrap{max-width:1200px;margin:auto;padding:28px clamp(14px,2vw,30px) 64px;color:#edf6ff}.cs-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}.cs-head h1{font-size:30px;margin:5px 0}.cs-muted{font-size:12px;color:#91abc5;line-height:1.55}.cs-card{border:1px solid #183f5e;background:linear-gradient(145deg,#071b2d,#041321);border-radius:15px;padding:20px;margin-bottom:16px}.cs-paths{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cs-path{display:block;border:1px solid #1c4568;border-radius:12px;padding:16px;background:#061728;cursor:pointer}.cs-path:has(input:checked){border-color:#7652ff;background:#141b45;box-shadow:0 0 0 1px #5b42df}.cs-path input{accent-color:#673cff;margin-right:8px}.cs-path strong{font-size:14px}.cs-path small{display:block;color:#8eabc6;font-size:11px;margin:8px 0 0 23px;line-height:1.5}.cs-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.cs-field{display:grid;gap:7px}.cs-field[hidden]{display:none!important}.cs-field-link{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.cs-field-link a{color:#c5b7ff;text-decoration:none;border:1px solid #3b3474;border-radius:8px;padding:9px 12px;font-size:11px;font-weight:800}.cs-field-link a:hover{background:#15163b}.cs-field label{font-size:11px;color:#a6c0d8}.cs-field select{width:100%;height:44px;background:#031321;color:#eef7ff;border:1px solid #1b496a;border-radius:9px;padding:0 11px}.cs-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:17px}.cs-btn{display:inline-flex;justify-content:center;align-items:center;border:1px solid #3d52bb;background:linear-gradient(110deg,#3925cb,#5421d5);color:white;border-radius:9px;padding:12px 16px;text-decoration:none;font-size:11px;font-weight:850;cursor:pointer}.cs-btn.secondary{background:#0a2238;border-color:#285274}.cs-error{border:1px solid #7d3446;background:#2a101b;color:#ffc7d0;padding:12px;border-radius:9px;font-size:11px;margin-bottom:12px}.cs-saved{border:1px solid #17654f;background:#062b25;color:#a9f5d8;padding:12px;border-radius:9px;font-size:11px;margin-bottom:12px}.cs-small-note{font-size:10px;color:#829eb8;margin-top:10px}.cs-criteria-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:11px}.cs-criteria-table th,.cs-criteria-table td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #1a3b56}.cs-criteria-table th{color:#a6c0d8}.cs-criteria-table td{color:#d8e7f6}.cs-criteria-table a{color:#b8a9ff}.cs-criteria-table small{display:block;color:#829eb8;margin-top:4px}@media(max-width:760px){.cs-paths,.cs-form-grid{grid-template-columns:1fr}.cs-head h1{font-size:25px}}
+</style></head><body><div class="layout"><aside class="sidebar"><a class="nx-brand" href="/dashboard" aria-label="NEXORA dashboard"><img src="/images/nexora-logo.svg?v=20261011-brand6" alt="NEXORA"></a><nav class="nx-nav" aria-label="NEXORA modules"><a href="/dashboard"><span>⌂</span><b>Dashboard</b></a><a href="/career"><span>✦</span><b>Career Guidance</b></a><a href="/academic"><span>◈</span><b>Academic Development</b></a><a href="/career-selection" class="active" aria-current="page"><span>◎</span><b>Career Selection</b></a><a href="/development-gps"><span>↗</span><b>Development GPS</b></a><a href="/opportunities"><span>▣</span><b>Opportunities Hub</b></a><a href="/recommended-courses"><span>✧</span><b>Recommended Courses</b></a><a href="/achievements"><span>✹</span><b>Achievements</b></a><a href="/integrations"><span>⌁</span><b>Connections</b></a><a href="/grade-calculator"><span>∑</span><b>SGPA / CGPA Calculator</b></a></nav><div class="sidebar-bottom"><a href="/settings"><span>⚙</span><b>Settings</b></a><a href="/logout/confirm" class="sidebar-logout" aria-label="Log out of NEXORA"><span aria-hidden="true">⇥</span><b>Logout</b></a></div></aside><main class="content cs-wrap"><div class="cs-head"><div><span class="eyebrow">CAREER PLANNING</span><h1>Career Selection</h1><p class="cs-muted">Choose your CSE career and placement path. Your saved career target maps into Development GPS and Recommended Courses.</p></div></div>
+
+<div class="cs-saved" th:if="${saved != null and !saved.isBlank()}" th:text="${saved == 'secondary' ? 'Secondary career path saved.' : 'Career selection saved. Your Development GPS target is now linked to this choice.'}">Career selection saved.</div>
+<div class="cs-error" th:if="${error != null and !(error == 'role' and primaryPath == 'On-campus placement')}" role="alert">
+  <span th:if="${error == 'path'}">Choose a valid placement path.</span>
+  <span th:if="${error == 'company'}">Choose a company for off-campus selection.</span>
+  <span th:if="${error == 'role'}">Choose a career from the list.</span>
+  <span th:if="${error == 'program'}">Choose a valid programme for the selected company and career.</span>
+  <span th:if="${error == 'secondary-locked'}">Secondary path requires Semester 6 and Development GPS at or below 75%.</span>
+  <span th:if="${error == 'secondary-not-qualified'}">The secondary career must overlap with your primary career and exceed 75% recorded readiness.</span>
+  <span th:if="${error == 'secondary-company'}">Choose a secondary company.</span>
+  <span th:if="${error != 'path' and error != 'company' and error != 'role' and error != 'program' and error != 'secondary-locked' and error != 'secondary-not-qualified' and error != 'secondary-company'}">Please review your selection and try again.</span>
+</div>
+<form id="careerGpsForm" method="post" action="/career-selection" class="cs-card">
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+<input type="hidden" name="sourceVersion" th:value="${sourceVersion}" value="SRM-PLACEMENT-2026"><input th:if="${roleChosen}" id="campusRoleFallback" type="hidden" name="targetRole" th:value="${targetRole}">
+<div class="cs-card" style="margin:0 0 16px;padding:0;border:0;background:transparent">
+<h2 style="font-size:17px;margin:0 0 12px">1. Select placement path</h2>
+<div class="cs-paths">
+<label class="cs-path"><input type="radio" name="primaryPath" value="On-campus placement" th:checked="${primaryPath == 'On-campus placement'}"><strong>On-campus placement</strong><small>Choose the package band used to organize your campus preparation. Bands are planning labels, not salary guarantees.</small></label>
+<label class="cs-path"><input type="radio" name="primaryPath" value="Off-campus placement" th:checked="${primaryPath == 'Off-campus placement'}"><strong>Off-campus placement</strong><small>Choose a company and a career target. Verified company criteria are shown only when matching source records exist.</small></label>
+</div></div>
+<div class="cs-form-grid">
+<div class="cs-field" id="careerField"><label for="careerTarget">Target CSE career (off-campus)</label><select id="careerTarget" name="targetRole"><option value="" th:selected="${!roleChosen}">Choose a CSE career</option><option th:each="r : ${roles}" th:value="${r.title}" th:text="${r.title}" th:selected="${roleChosen and r.title == targetRole}">Software Engineer</option></select><span class="cs-small-note">For on-campus planning, the career target is taken from your saved Career Guidance target when available. The directory currently contains <strong th:text="${careerCount}">74</strong> role entries.</span></div>
+<div class="cs-field" id="companyField"><label for="targetCompany">3. Target company (off-campus)</label><select id="targetCompany" name="targetCompany"><option value="">Choose a company</option><option th:each="company : ${companies}" th:value="${company}" th:text="${company}" th:selected="${company == targetCompany}">Company</option></select><span class="cs-small-note">Choose a company to load available programme names and sourced criteria. No vacancy or eligibility guarantee is implied.</span></div>
+<div class="cs-field" id="programField"><label for="targetProgram">Hiring programme (off-campus)</label><select id="targetProgram" name="targetProgram" th:attr="data-selected=${targetProgram}"><option value="Not specified" th:selected="${targetProgram == 'Not specified'}">Not specified / general preparation</option><option th:if="${targetProgram != 'Not specified'}" th:value="${targetProgram}" th:text="${targetProgram}" selected>Saved programme</option></select><span class="cs-small-note">Programme names are loaded from the local verified criteria catalogue. “Not specified” remains available when no sourced programme exists.</span></div>
+<div class="cs-field" id="bandField"><label for="targetBand">Package band (on-campus planning)</label><select id="targetBand" name="targetBand"><option th:each="band : ${bands}" th:value="${band}" th:text="${band}" th:selected="${band == targetBand}">Dream</option></select><span class="cs-small-note">A preparation category only; it is not a promised package or hiring outcome.</span></div>
+</div>
+<div class="cs-field-link" style="margin-top:14px"><a href="https://www.onetonline.org/" target="_blank" rel="noopener noreferrer">Open O*NET OnLine ↗</a><span class="cs-small-note">Separate external occupational information resource.</span></div>
+<section class="cs-card" id="companyCriteriaCard" style="margin:14px 0;padding:14px" aria-live="polite"><h3 style="margin:0 0 8px;font-size:16px">Company criteria preview</h3><p id="companyCriteriaStatus" class="cs-small-note">Select an off-campus company and role to check for verified criteria.</p><div id="companyCriteriaResults"></div></section>
+<div class="cs-actions"><button class="cs-btn" type="submit">Save career selection</button><a class="cs-btn secondary" href="/dashboard">Back to dashboard</a></div>
+<p class="cs-small-note">Your saved target role is reused by Development GPS and Recommended Courses. Eligibility and readiness benchmarks remain separate from a guaranteed hiring decision.</p>
+</form>
+<section class="cs-card" id="secondary-career"><div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap"><div><span class="eyebrow">FUTURE OPTION</span><h2 style="font-size:18px;margin:7px 0">Secondary career path</h2><p class="cs-muted">This remains locked until Semester 6 (3.5th year). It opens only when Development GPS is 75% or lower, and only careers where more than 75% of the secondary role’s skill requirements are already covered are offered.</p></div><span class="cs-btn secondary" th:text="${secondaryUnlocked ? 'Eligibility met' : 'Locked'}">Locked</span></div>
+<div class="cs-error" th:if="${!secondaryUnlocked}" th:text="${secondaryLockReason}">Secondary path locked.</div>
+<form id="secondaryCareerForm" th:if="${secondaryUnlocked}" method="post" action="/career-selection/secondary" class="cs-form-grid" style="margin-top:15px"><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><div class="cs-field"><label for="secondaryRole">Related secondary career</label><select id="secondaryRole" name="secondaryRole" required disabled><option value="">Checking your completed skills…</option></select></div><div class="cs-field"><label for="secondaryCompany">Secondary company</label><select id="secondaryCompany" name="secondaryCompany" required><option value="">Choose a company</option><option th:each="company : ${companies}" th:value="${company}" th:text="${company}">Company</option></select></div><div class="cs-field"><label for="secondaryMode">Path preference</label><select id="secondaryMode" name="mode"><option value="BOTH">Continue primary and secondary</option><option value="PRIMARY_ONLY">Continue primary only</option><option value="SECONDARY_ONLY">Switch to secondary</option></select></div><div class="cs-actions"><button id="secondarySaveButton" class="cs-btn" type="submit" disabled>Save secondary path</button></div></form>
+<div id="secondaryCandidateStatus" class="cs-small-note" th:if="${secondaryUnlocked}" role="status" aria-live="polite">Loading related career options…</div>
+<div id="secondaryUnavailable" class="cs-error" th:if="${secondaryUnlocked}" hidden>No secondary career currently meets the greater-than-75% readiness rule based on recorded completed skills. Keep progressing in the primary path; unrelated careers are not suggested.</div>
+<div class="cs-saved" th:if="${!#maps.isEmpty(secondarySelection)}"><b>Saved secondary path:</b> <span th:text="${secondarySelection.secondary_role}">Role</span> · <span th:text="${secondarySelection.secondary_company}">Company</span> · <span th:text="${secondarySelection.mode}">BOTH</span></div></section>
+</main></div><script>
+(() => {
+  'use strict';
+  const form = document.getElementById('careerGpsForm');
+  const paths = [...document.querySelectorAll('input[name="primaryPath"]')];
+  const careerField = document.getElementById('careerField');
+  const companyField = document.getElementById('companyField');
+  const programField = document.getElementById('programField');
+  const bandField = document.getElementById('bandField');
+  const companySelect = document.getElementById('targetCompany');
+  const careerSelect = document.getElementById('careerTarget');
+  const programSelect = document.getElementById('targetProgram');
+  const bandSelect = document.getElementById('targetBand');
+  const criteriaCard = document.getElementById('companyCriteriaCard');
+  const criteriaStatus = document.getElementById('companyCriteriaStatus');
+  const criteriaResults = document.getElementById('companyCriteriaResults');
+  let requestSequence = 0;
+
+  const isOffCampus = () => paths.some(path => path.checked && path.value === 'Off-campus placement');
+  const addOption = (select, value, label, selected) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = label;
+    option.selected = Boolean(selected);
+    select.appendChild(option);
+  };
+  const updatePathFields = () => {
+    const offCampus = isOffCampus();
+    if (careerField) careerField.hidden = !offCampus;
+    if (companyField) companyField.style.display = offCampus ? 'grid' : 'none';
+    if (programField) programField.style.display = offCampus ? 'grid' : 'none';
+    if (bandField) bandField.style.display = offCampus ? 'none' : 'grid';
+    if (companySelect) { companySelect.required = offCampus; companySelect.disabled = !offCampus; }
+    if (careerSelect) { careerSelect.required = offCampus; careerSelect.disabled = !offCampus; }
+    const campusFallback = document.getElementById('campusRoleFallback');
+    if (campusFallback) campusFallback.disabled = offCampus;
+    if (programSelect) programSelect.disabled = !offCampus;
+    if (bandSelect) { bandSelect.required = !offCampus; bandSelect.disabled = offCampus; }
+    if (criteriaCard) criteriaCard.style.display = offCampus ? 'block' : 'none';
+    if (offCampus) loadProgramsAndCriteria();
+    else { requestSequence++; if (criteriaResults) criteriaResults.replaceChildren(); if (criteriaStatus) criteriaStatus.textContent = 'Company-specific criteria are shown for off-campus selections only.'; }
+  };
+
+  const fetchJson = async (url) => {
+    const response = await fetch(url, { credentials: 'same-origin', cache: 'no-store', headers: { 'Accept': 'application/json' } });
+    if (!response.ok) throw new Error(`Request failed (${response.status})`);
+    return response.json();
+  };
+
+  const renderCriteria = (items, seq) => {
+    if (seq !== requestSequence || !criteriaResults || !criteriaStatus) return;
+    criteriaResults.replaceChildren();
+    if (!Array.isArray(items) || items.length === 0) {
+      criteriaStatus.textContent = 'No verified company/role criteria are available for this combination. Use the role skills and official job notice for preparation.';
+      return;
+    }
+    criteriaStatus.textContent = `${items.length} sourced criterion/criteria found. Review the source and observation date before relying on them.`;
+    const table = document.createElement('table');
+    table.className = 'cs-criteria-table';
+    const thead = document.createElement('thead');
+    const header = document.createElement('tr');
+    for (const label of ['Requirement', 'Target', 'Source']) {
+      const th = document.createElement('th'); th.textContent = label; header.appendChild(th);
+    }
+    thead.appendChild(header); table.appendChild(thead);
+    const tbody = document.createElement('tbody');
+    for (const item of items) {
+      const row = document.createElement('tr');
+      const metric = document.createElement('td'); metric.textContent = String(item.metric || 'Requirement'); row.appendChild(metric);
+      const target = document.createElement('td'); target.textContent = String(item.target || 'See source'); row.appendChild(target);
+      const source = document.createElement('td');
+      if (item.sourceUrl) {
+        const link = document.createElement('a'); link.href = String(item.sourceUrl); link.target = '_blank'; link.rel = 'noopener noreferrer';
+        link.textContent = String(item.sourceTitle || 'View source'); source.appendChild(link);
+      } else source.textContent = String(item.sourceTitle || 'Source not supplied');
+      const note = document.createElement('small'); note.textContent = ` · ${String(item.observedAt || 'date unavailable')}`; source.appendChild(note);
+      row.appendChild(source); tbody.appendChild(row);
+    }
+    table.appendChild(tbody); criteriaResults.appendChild(table);
+  };
+
+  async function loadProgramsAndCriteria() {
+    if (!isOffCampus() || !companySelect || !careerSelect || !programSelect) return;
+    const companyName = companySelect.value.trim();
+    const roleName = careerSelect.value.trim();
+    const seq = ++requestSequence;
+    criteriaResults?.replaceChildren();
+    if (!companyName || !roleName) {
+      programSelect.replaceChildren(); addOption(programSelect, 'Not specified', 'Not specified / general preparation', true);
+      if (criteriaStatus) criteriaStatus.textContent = 'Choose both a company and a career to check verified criteria.';
+      return;
+    }
+    if (criteriaStatus) criteriaStatus.textContent = 'Loading programme and verified criteria…';
+    const previous = programSelect.value || programSelect.dataset.selected || 'Not specified';
+    try {
+      const params = new URLSearchParams({ company: companyName, role: roleName });
+      const programs = await fetchJson(`/career-gps/programs?${params.toString()}`);
+      if (seq !== requestSequence) return;
+      programSelect.replaceChildren();
+      addOption(programSelect, 'Not specified', 'Not specified / general preparation', previous === 'Not specified');
+      for (const program of (Array.isArray(programs) ? programs : [])) {
+        const label = String(program);
+        if (!label || label === 'Not specified') continue;
+        addOption(programSelect, label, label, label === previous);
+      }
+      if (![...programSelect.options].some(option => option.selected)) programSelect.value = 'Not specified';
+      programSelect.dataset.selected = programSelect.value;
+      await loadCriteria(seq);
+    } catch (error) {
+      if (seq !== requestSequence) return;
+      programSelect.replaceChildren(); addOption(programSelect, 'Not specified', 'Not specified / general preparation', true);
+      if (criteriaStatus) criteriaStatus.textContent = 'Could not load verified company criteria. The career target can still be saved; check the official employer notice.';
+    }
+  }
+
+  async function loadCriteria(seq = requestSequence) {
+    if (!isOffCampus() || !companySelect?.value || !careerSelect?.value || !programSelect) return;
+    const params = new URLSearchParams({ company: companySelect.value, role: careerSelect.value, program: programSelect.value || 'Not specified' });
+    try { renderCriteria(await fetchJson(`/career-gps/criteria?${params.toString()}`), seq); }
+    catch (error) {
+      if (seq !== requestSequence) return;
+      criteriaResults?.replaceChildren();
+      if (criteriaStatus) criteriaStatus.textContent = 'Verified criteria could not be loaded right now. You can still save the role and check the official employer notice separately.';
+    }
+  }
+
+  paths.forEach(path => path.addEventListener('change', updatePathFields));
+  companySelect?.addEventListener('change', loadProgramsAndCriteria);
+  careerSelect?.addEventListener('change', loadProgramsAndCriteria);
+  programSelect?.addEventListener('change', () => loadCriteria(++requestSequence));
+  updatePathFields();
+
+  const secondaryForm = document.getElementById('secondaryCareerForm');
+  if (secondaryForm) {
+    const roleSelect = document.getElementById('secondaryRole');
+    const saveButton = document.getElementById('secondarySaveButton');
+    const status = document.getElementById('secondaryCandidateStatus');
+    const unavailable = document.getElementById('secondaryUnavailable');
+    fetch('/career-selection/secondary-candidates', { method: 'GET', credentials: 'same-origin', cache: 'no-store', headers: { 'Accept': 'application/json' } })
+      .then(response => { if (!response.ok) throw new Error('Unable to load eligible career options.'); return response.json(); })
+      .then(roles => {
+        roleSelect.replaceChildren();
+        const placeholder = document.createElement('option'); placeholder.value = ''; placeholder.textContent = roles.length ? 'Choose an eligible related role' : 'No eligible related role found'; roleSelect.appendChild(placeholder);
+        for (const role of roles) { const option = document.createElement('option'); option.value = String(role); option.textContent = String(role); roleSelect.appendChild(option); }
+        roleSelect.disabled = roles.length === 0; saveButton.disabled = roles.length === 0; unavailable.hidden = roles.length !== 0;
+        status.textContent = roles.length ? `${roles.length} related role(s) meet the current recorded-skill rule.` : ''; if (!roles.length) status.hidden = true;
+      })
+      .catch(() => {
+        roleSelect.replaceChildren(); const option = document.createElement('option'); option.value = ''; option.textContent = 'Could not load options'; roleSelect.appendChild(option);
+        roleSelect.disabled = true; saveButton.disabled = true; status.textContent = 'Unable to load eligible careers. Refresh this page to try again.';
+      });
+  }
+})();
+</script></body></html>

@@ -1,0 +1,146 @@
+package com.nexora.config;
+
+import jakarta.annotation.PostConstruct;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class DatabaseSchemaInitializer {
+    private final JdbcTemplate jdbc;
+    public DatabaseSchemaInitializer(JdbcTemplate jdbc) { this.jdbc = jdbc; }
+
+    /** Run schema compatibility checks while the application context is still being created.
+     * The previous ApplicationReadyEvent hook ran after the HTTP server had started accepting
+     * requests, so early clicks could race table/column creation and intermittently fail. */
+    @PostConstruct
+    public void initialize() {
+        List<String> sql = List.of(
+            "CREATE TABLE IF NOT EXISTS students (student_id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL UNIQUE,college_email VARCHAR(255) NOT NULL UNIQUE,full_name VARCHAR(180) NOT NULL,department VARCHAR(180),program VARCHAR(120),section VARCHAR(50),batch_start_year INT NOT NULL,batch_end_year INT NOT NULL,current_year INT NOT NULL,current_semester INT NOT NULL,active BOOLEAN NOT NULL DEFAULT TRUE,account_created BOOLEAN NOT NULL DEFAULT FALSE,password_hash VARCHAR(255) NOT NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,INDEX(college_email))",
+            "CREATE TABLE IF NOT EXISTS academic_subjects (subject_code VARCHAR(50) PRIMARY KEY,subject_name VARCHAR(180) NOT NULL,semester_final_available BOOLEAN NOT NULL DEFAULT TRUE,repository_available BOOLEAN NOT NULL DEFAULT TRUE,academic_intelligence_available BOOLEAN NOT NULL DEFAULT TRUE,semester_number INT NOT NULL DEFAULT 3,display_order INT NOT NULL DEFAULT 999)",
+            "CREATE TABLE IF NOT EXISTS otp_rate_limits (identifier VARCHAR(255) NOT NULL,action_type VARCHAR(20) NOT NULL,window_started_at TIMESTAMP NOT NULL,last_sent_at TIMESTAMP NOT NULL,send_count INT NOT NULL DEFAULT 0,PRIMARY KEY(identifier,action_type))",
+            "CREATE TABLE IF NOT EXISTS pending_login_otps (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL UNIQUE,college_email VARCHAR(255) NOT NULL,otp_hash VARCHAR(255) NOT NULL,otp_expires_at TIMESTAMP NOT NULL,attempts INT NOT NULL DEFAULT 0,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(college_email))",
+            "CREATE TABLE IF NOT EXISTS pending_student_registrations (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,college_email VARCHAR(255) NOT NULL UNIQUE,full_name VARCHAR(180) NOT NULL,department VARCHAR(180),program VARCHAR(120),section VARCHAR(50),batch_start_year INT NOT NULL,batch_end_year INT NOT NULL,current_year INT NOT NULL,current_semester INT NOT NULL,password_hash VARCHAR(255) NOT NULL,otp_hash VARCHAR(255) NOT NULL,otp_expires_at TIMESTAMP NOT NULL,attempts INT NOT NULL DEFAULT 0,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS student_skills (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,skill_name VARCHAR(120) NOT NULL,skill_level VARCHAR(30) NOT NULL,status VARCHAR(30) NOT NULL,notes VARCHAR(500),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS student_projects (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,title VARCHAR(180) NOT NULL,description TEXT,technologies VARCHAR(500),role VARCHAR(120),status VARCHAR(40) NOT NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS student_experiences (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,experience_type VARCHAR(60) NOT NULL,title VARCHAR(180) NOT NULL,organization VARCHAR(180),description TEXT,start_date VARCHAR(30),end_date VARCHAR(30),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS career_targets (registration_no VARCHAR(50) PRIMARY KEY,target_role VARCHAR(120) NOT NULL,notes VARCHAR(1000),updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS career_profiles (registration_no VARCHAR(50) PRIMARY KEY,primary_path VARCHAR(100) NOT NULL,secondary_path VARCHAR(100),higher_study_preference VARCHAR(100),target_role VARCHAR(120) NOT NULL,target_band VARCHAR(30) NOT NULL,source_version VARCHAR(80) NOT NULL DEFAULT 'SRM-PLACEMENT-2026',updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS career_gps_selections (registration_no VARCHAR(50) PRIMARY KEY,primary_path VARCHAR(100) NOT NULL,target_company VARCHAR(180),target_program VARCHAR(180) NOT NULL DEFAULT 'Not specified',target_role VARCHAR(160) NOT NULL,target_band VARCHAR(30) NOT NULL,source_version VARCHAR(80) NOT NULL DEFAULT 'SRM-PLACEMENT-2026',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS company_role_criteria (id BIGINT PRIMARY KEY AUTO_INCREMENT,company_name VARCHAR(180) NOT NULL,role_title VARCHAR(180) NOT NULL,hiring_program VARCHAR(180) NOT NULL DEFAULT 'Not specified',yop INT NOT NULL,metric VARCHAR(100) NOT NULL,target_value DECIMAL(10,2),target_text VARCHAR(500),mandatory_flag BOOLEAN NOT NULL DEFAULT FALSE,verified_flag BOOLEAN NOT NULL DEFAULT FALSE,source_title VARCHAR(250),source_url VARCHAR(500),observed_at DATE,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,UNIQUE KEY uq_company_role_criterion(company_name,role_title,hiring_program,yop,metric),INDEX idx_company_role_lookup(company_name,role_title,yop))",
+            "CREATE TABLE IF NOT EXISTS student_problem_logs (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,platform VARCHAR(40) NOT NULL,problem_title VARCHAR(180) NOT NULL,problem_url VARCHAR(500) NOT NULL,difficulty VARCHAR(30),solved_on DATE,verification_status VARCHAR(30) NOT NULL DEFAULT 'SELF_REPORTED',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,UNIQUE KEY uq_student_problem(registration_no,platform,problem_url),INDEX(registration_no),INDEX(platform))",
+            "CREATE TABLE IF NOT EXISTS student_platform_connections (registration_no VARCHAR(50) NOT NULL,platform VARCHAR(40) NOT NULL,external_handle VARCHAR(180) NOT NULL,connected_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,PRIMARY KEY(registration_no,platform))",
+            "CREATE TABLE IF NOT EXISTS student_oauth_connections (registration_no VARCHAR(50) NOT NULL,provider VARCHAR(40) NOT NULL,provider_principal VARCHAR(180) NOT NULL,external_handle VARCHAR(180),last_synced_at TIMESTAMP NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,PRIMARY KEY(registration_no,provider))",
+            "CREATE TABLE IF NOT EXISTS student_secondary_career_paths (registration_no VARCHAR(50) PRIMARY KEY,secondary_role VARCHAR(160) NOT NULL,secondary_company VARCHAR(180) NOT NULL,mode VARCHAR(30) NOT NULL DEFAULT 'BOTH',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS nexora_neopat_progress (registration_no VARCHAR(80) NOT NULL,module_name VARCHAR(255) NOT NULL,progress_status VARCHAR(80) NOT NULL,imported_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,PRIMARY KEY(registration_no,module_name),INDEX idx_neopat_registration(registration_no))",
+            "CREATE TABLE IF NOT EXISTS student_academic_marks (registration_no VARCHAR(50) PRIMARY KEY,tenth_percentage DECIMAL(5,2),twelfth_percentage DECIMAL(5,2),updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS student_settings (registration_no VARCHAR(50) PRIMARY KEY,email_notifications BOOLEAN NOT NULL DEFAULT TRUE,in_app_notifications BOOLEAN NOT NULL DEFAULT TRUE,weekly_summary BOOLEAN NOT NULL DEFAULT FALSE,profile_visibility BOOLEAN NOT NULL DEFAULT FALSE,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS student_learning_resources (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,resource_key VARCHAR(80) NOT NULL,resource_title VARCHAR(180) NOT NULL,resource_url VARCHAR(500) NOT NULL,status VARCHAR(20) NOT NULL DEFAULT 'SAVED',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,UNIQUE KEY uq_student_resource(registration_no,resource_key),INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS teacher_topic_evidence (id BIGINT PRIMARY KEY AUTO_INCREMENT,resource_id BIGINT NOT NULL,subject_code VARCHAR(50) NOT NULL,topic VARCHAR(180) NOT NULL,unit_name VARCHAR(180),mention_count INT NOT NULL DEFAULT 1,confidence DECIMAL(5,4) NOT NULL DEFAULT 0,analysis_summary VARCHAR(1000),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,UNIQUE KEY uq_teacher_topic(resource_id,topic),INDEX(subject_code),INDEX(topic))",
+            "CREATE TABLE IF NOT EXISTS student_semester_gpa_history (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,semester_number INT NOT NULL,sgpa DECIMAL(4,2) NOT NULL,total_credits INT NOT NULL,source VARCHAR(30) NOT NULL DEFAULT 'STUDENT_ENTERED',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,UNIQUE KEY uq_student_semester_gpa(registration_no,semester_number),INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS grade_subject_records (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,semester_number INT NOT NULL,subject_name VARCHAR(180) NOT NULL,credits INT NOT NULL,letter_grade VARCHAR(3) NOT NULL,grade_points INT NOT NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,INDEX idx_grade_reg_semester(registration_no,semester_number),INDEX idx_grade_reg(registration_no))",
+            "CREATE TABLE IF NOT EXISTS student_evidence (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,category VARCHAR(60) NOT NULL,metric VARCHAR(100) NOT NULL,value_text VARCHAR(255) NOT NULL,source VARCHAR(100),verification_status VARCHAR(50) NOT NULL,reference_url VARCHAR(500),file_name VARCHAR(255),captured_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,notes VARCHAR(1000),INDEX(registration_no),INDEX(category),INDEX(metric))",
+            "CREATE TABLE IF NOT EXISTS achievement_records (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,achievement_type VARCHAR(60) NOT NULL,title VARCHAR(180) NOT NULL,organization VARCHAR(180),event_date DATE,result_text VARCHAR(120),evidence_id BIGINT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS career_criteria (id BIGINT PRIMARY KEY AUTO_INCREMENT,yop INT NOT NULL,source_version VARCHAR(80) NOT NULL,band VARCHAR(30) NOT NULL,metric VARCHAR(100) NOT NULL,target_value DECIMAL(10,2),target_text VARCHAR(500),mandatory_flag BOOLEAN DEFAULT FALSE,verified_flag BOOLEAN NOT NULL DEFAULT FALSE,source_url VARCHAR(500),source_title VARCHAR(250),observed_at DATE,UNIQUE KEY uq_criteria(yop,source_version,band,metric))",
+            "CREATE TABLE IF NOT EXISTS student_tests (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,subject_code VARCHAR(50) NOT NULL,chapter VARCHAR(180) NOT NULL,test_type VARCHAR(40) NOT NULL,marks_obtained DECIMAL(8,2),max_marks DECIMAL(8,2),status VARCHAR(30),attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS placement_profiles (registration_no VARCHAR(50) PRIMARY KEY,cgpa DECIMAL(4,2),active_arrears INT DEFAULT 0,aptitude DECIMAL(5,3),technical_skills DECIMAL(5,3),coding_problems INT DEFAULT 0,leetcode INT DEFAULT 0,hackerrank DECIMAL(4,2),coding_assessment DECIMAL(5,3),internships INT DEFAULT 0,projects INT DEFAULT 0,certifications INT DEFAULT 0,hackathons INT DEFAULT 0,competitive_programming INT DEFAULT 0,github_repositories INT DEFAULT 0,implemented_projects INT DEFAULT 0,linkedin_updated BOOLEAN DEFAULT FALSE,portfolio BOOLEAN DEFAULT FALSE,eportfolio BOOLEAN DEFAULT FALSE,communication DECIMAL(5,3),group_discussion DECIMAL(8,2),presentation DECIMAL(8,2),technical_mock DECIMAL(8,2),hr_mock DECIMAL(8,2),resume_level VARCHAR(80) DEFAULT 'Basic Readiness',professional_behaviour VARCHAR(50) DEFAULT 'Satisfactory',placement_training_attendance DECIMAL(5,3),placement_assessment_attendance DECIMAL(5,3),resume_verified BOOLEAN DEFAULT FALSE,profile_verified BOOLEAN DEFAULT FALSE,industry_exposure INT DEFAULT 0,tenth_percentile DECIMAL(6,2),twelfth_percentile DECIMAL(6,2),updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS analysis_events (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,event_type VARCHAR(80) NOT NULL,source VARCHAR(120),details VARCHAR(1000),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS academic_resources (id BIGINT PRIMARY KEY AUTO_INCREMENT,subject_code VARCHAR(50) NOT NULL,resource_type VARCHAR(40) NOT NULL,title VARCHAR(255) NOT NULL,original_filename VARCHAR(255) NOT NULL,mime_type VARCHAR(150),storage_path VARCHAR(1000) NOT NULL,resource_month VARCHAR(30),resource_year INT,uploaded_by VARCHAR(120),drive_file_id VARCHAR(200),drive_web_view_link VARCHAR(1000),processing_status VARCHAR(40) DEFAULT 'PROCESSING',processing_message VARCHAR(1000),extracted_question_count INT DEFAULT 0,approval_status VARCHAR(30) DEFAULT 'PENDING',approved_by VARCHAR(120),approved_at TIMESTAMP NULL,content_hash VARCHAR(64),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(subject_code),INDEX(resource_type),INDEX(resource_year),INDEX(approval_status),UNIQUE KEY uq_academic_drive_file(drive_file_id))",
+            "CREATE TABLE IF NOT EXISTS academic_extracted_questions (id BIGINT PRIMARY KEY AUTO_INCREMENT,resource_id BIGINT NOT NULL,subject_code VARCHAR(50) NOT NULL,resource_type VARCHAR(40) NOT NULL,exam_year INT,question_number VARCHAR(30),question_text TEXT NOT NULL,topic VARCHAR(180),question_model VARCHAR(120),marks INT DEFAULT 0,confidence DECIMAL(5,4) DEFAULT 0,extraction_method VARCHAR(40),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(resource_id),INDEX(subject_code),INDEX(topic),INDEX(resource_type))",
+            "CREATE TABLE IF NOT EXISTS pyq_questions (id BIGINT PRIMARY KEY AUTO_INCREMENT,subject_code VARCHAR(50) NOT NULL,exam_type VARCHAR(60) NOT NULL,exam_year VARCHAR(20),topic VARCHAR(180),question_model VARCHAR(120),question_text TEXT NOT NULL,marks INT DEFAULT 0,source VARCHAR(500),INDEX(subject_code),INDEX(topic),INDEX(exam_year))",
+            "CREATE TABLE IF NOT EXISTS student_xp_events (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,event_type VARCHAR(80) NOT NULL,reference_id BIGINT NULL,xp INT NOT NULL,description VARCHAR(500),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,UNIQUE KEY uq_xp_reference(event_type,reference_id),INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS student_paper_integrity (registration_no VARCHAR(50) PRIMARY KEY,violation_count INT NOT NULL DEFAULT 0,banned BOOLEAN NOT NULL DEFAULT FALSE,last_reason VARCHAR(1000),last_violation_at TIMESTAMP NULL,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)",
+            "CREATE TABLE IF NOT EXISTS student_chapter_test_rewards (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,subject_code VARCHAR(50) NOT NULL,chapter_index INT NOT NULL,attempt_id BIGINT NOT NULL,score_percent DECIMAL(5,2) NOT NULL,awarded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,UNIQUE KEY uq_chapter_reward(registration_no,subject_code,chapter_index),UNIQUE KEY uq_chapter_reward_attempt(attempt_id),INDEX(registration_no))",
+            "CREATE TABLE IF NOT EXISTS chapter_test_questions (id BIGINT PRIMARY KEY AUTO_INCREMENT,subject_code VARCHAR(50) NOT NULL,chapter_index INT NOT NULL,question_text TEXT NOT NULL,option_a VARCHAR(1000) NOT NULL,option_b VARCHAR(1000) NOT NULL,option_c VARCHAR(1000) NOT NULL,option_d VARCHAR(1000) NOT NULL,correct_option CHAR(1) NOT NULL,marks DECIMAL(8,2) NOT NULL DEFAULT 1,active BOOLEAN NOT NULL DEFAULT TRUE,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX idx_chapter_test(subject_code,chapter_index,active))",
+            "CREATE TABLE IF NOT EXISTS subscription_requests (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,student_name VARCHAR(180) NOT NULL,student_email VARCHAR(255),plan_code VARCHAR(30) NOT NULL,plan_name VARCHAR(80) NOT NULL,billing_cycle VARCHAR(30) NOT NULL,amount DECIMAL(10,2) NOT NULL,transaction_id VARCHAR(120) NOT NULL,payer_upi_id VARCHAR(255),payment_date DATE NOT NULL,payment_time TIME NOT NULL,payment_screenshot_path VARCHAR(1000),note VARCHAR(1000),status VARCHAR(30) NOT NULL DEFAULT 'PENDING',reviewed_by VARCHAR(120),reviewed_at TIMESTAMP NULL,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,INDEX(registration_no),INDEX(status),UNIQUE KEY uq_subscription_transaction(transaction_id))",
+            "CREATE TABLE IF NOT EXISTS student_subscriptions (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,plan_code VARCHAR(30) NOT NULL,plan_name VARCHAR(80) NOT NULL,price DECIMAL(10,2) NOT NULL,billing_cycle VARCHAR(30) NOT NULL,status VARCHAR(30) NOT NULL DEFAULT 'ACTIVE',payment_status VARCHAR(30) NOT NULL DEFAULT 'DEMO',started_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,expires_at TIMESTAMP NULL,UNIQUE KEY uq_student_subscription(registration_no))",
+            "CREATE TABLE IF NOT EXISTS reward_redemptions (id BIGINT PRIMARY KEY AUTO_INCREMENT,registration_no VARCHAR(50) NOT NULL,reward_code VARCHAR(50) NOT NULL,reward_name VARCHAR(120) NOT NULL,points_cost INT NOT NULL,payout_amount DECIMAL(10,2) NOT NULL DEFAULT 25.00,upi_id VARCHAR(255),status VARCHAR(30) NOT NULL DEFAULT 'REQUESTED',requested_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,reviewed_by VARCHAR(120),reviewed_at TIMESTAMP NULL,payment_reference VARCHAR(120),paid_at TIMESTAMP NULL,admin_note VARCHAR(1000),INDEX(registration_no),INDEX(status))"
+        );
+        for (String statement : sql) {
+            try { jdbc.execute(statement); } catch (Exception ignored) { /* Existing deployments may already have the table. */ }
+        }
+        ensureCareerCriteriaEvidenceColumns();
+        addColumnIfMissing("career_gps_selections", "target_program", "VARCHAR(180) NOT NULL DEFAULT 'Not specified'");
+        addColumnIfMissing("career_profiles", "source_version", "VARCHAR(80) NOT NULL DEFAULT 'SRM-PLACEMENT-2026'");
+        addColumnIfMissing("achievement_records", "evidence_id", "BIGINT NULL");
+        addColumnIfMissing("academic_resources", "drive_file_id", "VARCHAR(200)");
+        addColumnIfMissing("academic_resources", "drive_web_view_link", "VARCHAR(1000)");
+        addColumnIfMissing("academic_resources", "processing_status", "VARCHAR(40) DEFAULT 'PROCESSING'");
+        addColumnIfMissing("academic_resources", "processing_message", "VARCHAR(1000)");
+        addColumnIfMissing("academic_resources", "extracted_question_count", "INT DEFAULT 0");
+        addColumnIfMissing("academic_resources", "approval_status", "VARCHAR(30) DEFAULT 'PENDING'");
+        addColumnIfMissing("academic_resources", "approved_by", "VARCHAR(120)");
+        addColumnIfMissing("academic_resources", "approved_at", "TIMESTAMP NULL");
+        addColumnIfMissing("academic_resources", "content_hash", "VARCHAR(64)");
+        // Composite indexes match the academic screens' real filters and ordering. Existing
+        // installations receive them safely; duplicate-index errors are intentionally ignored.
+        try { jdbc.execute("CREATE INDEX idx_academic_resource_lookup ON academic_resources(subject_code, resource_type, approval_status, resource_year, id)"); } catch (Exception ignored) { }
+        try { jdbc.execute("CREATE INDEX idx_pyq_subject_year_topic ON pyq_questions(subject_code, exam_year, topic)"); } catch (Exception ignored) { }
+        try { jdbc.execute("CREATE INDEX idx_extracted_subject_type_year ON academic_extracted_questions(subject_code, resource_type, exam_year, id)"); } catch (Exception ignored) { }
+        addColumnIfMissing("academic_subjects", "semester_number", "INT NOT NULL DEFAULT 3");
+        addColumnIfMissing("academic_subjects", "display_order", "INT NOT NULL DEFAULT 999");
+        addColumnIfMissing("reward_redemptions", "payout_amount", "DECIMAL(10,2) NOT NULL DEFAULT 25.00");
+        addColumnIfMissing("reward_redemptions", "upi_id", "VARCHAR(255)");
+        addColumnIfMissing("reward_redemptions", "reviewed_by", "VARCHAR(120)");
+        addColumnIfMissing("reward_redemptions", "reviewed_at", "TIMESTAMP NULL");
+        addColumnIfMissing("reward_redemptions", "payment_reference", "VARCHAR(120)");
+        addColumnIfMissing("reward_redemptions", "paid_at", "TIMESTAMP NULL");
+        addColumnIfMissing("reward_redemptions", "admin_note", "VARCHAR(1000)");
+        try { jdbc.execute("CREATE UNIQUE INDEX uq_reward_redemption_code ON reward_redemptions(reward_code)"); } catch (Exception ignored) { }
+        try { jdbc.execute("CREATE UNIQUE INDEX uq_reward_payment_reference ON reward_redemptions(payment_reference)"); } catch (Exception ignored) { }
+        // Older installations may predate the transaction-reference uniqueness declaration.
+        // If historic duplicates exist, keep those records for manual reconciliation rather than deleting them.
+        try { jdbc.execute("CREATE UNIQUE INDEX uq_subscription_transaction ON subscription_requests(transaction_id)"); } catch (Exception ignored) { }
+        seedAcademicSubjects();
+        jdbc.update("UPDATE student_subscriptions SET plan_code='FREE', plan_name='Free', price=0, billing_cycle='NONE', status='ACTIVE', payment_status='FREE', expires_at=NULL WHERE payment_status='DEMO'");
+        // The supported catalogue is Free + Premium only. Keep historic requests for audit,
+        // but do not leave legacy Basic subscriptions active or legacy Basic requests pending.
+        jdbc.update("UPDATE student_subscriptions SET plan_code='FREE', plan_name='Free', price=0, billing_cycle='NONE', status='ACTIVE', payment_status='FREE', expires_at=NULL WHERE UPPER(plan_code)='BASIC'");
+        jdbc.update("UPDATE subscription_requests SET status='REJECTED', reviewed_by='SYSTEM_PLAN_MIGRATION', reviewed_at=CURRENT_TIMESTAMP, note=CONCAT(COALESCE(note,''), CASE WHEN COALESCE(note,'')='' THEN '' ELSE ' | ' END, 'Closed: Basic plan is no longer offered; submit a Premium request if desired.') WHERE UPPER(plan_code)='BASIC' AND status='PENDING'");
+        // Do not seed unverified placement thresholds. Official criteria must be sourced and verified first.
+    }
+
+    private void addColumnIfMissing(String table, String column, String definition) {
+        try { jdbc.execute("ALTER TABLE " + table + " ADD COLUMN " + column + " " + definition); } catch (Exception ignored) { }
+    }
+
+
+    /** Adds source provenance to pre-existing databases without marking legacy rows as verified. */
+    private void ensureCareerCriteriaEvidenceColumns() {
+        ensureColumn("verified_flag", "BOOLEAN NOT NULL DEFAULT FALSE");
+        ensureColumn("source_url", "VARCHAR(500) NULL");
+        ensureColumn("source_title", "VARCHAR(250) NULL");
+        ensureColumn("observed_at", "DATE NULL");
+        // Existing criteria were created by an earlier prototype without retained source evidence.
+        // They must remain unverified until a human supplies and checks the official source.
+        jdbc.update("UPDATE career_criteria SET verified_flag=FALSE WHERE source_version NOT REGEXP '^SRM-PLACEMENT-[0-9]{4}$' OR source_url IS NULL OR source_url='' OR source_title IS NULL OR source_title='' OR observed_at IS NULL");
+    }
+
+    private void ensureColumn(String column, String definition) {
+        Integer found = jdbc.queryForObject(
+                "SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='career_criteria' AND COLUMN_NAME=?",
+                Integer.class, column);
+        if (found == null || found == 0) {
+            jdbc.execute("ALTER TABLE career_criteria ADD COLUMN " + column + " " + definition);
+        }
+    }
+
+    private void seedAcademicSubjects() {
+        String[][] rows = {
+            {"21MAB201T","Transforms and Boundary Value Problems","3","1"},
+            {"21DCS201P","Design Thinking Methodology","3","2"},
+            {"21CSS201T","Computer Organization and Architecture","3","3"},
+            {"21CSC201J","Data Structures and Algorithms","3","4"},
+            {"21CSC202J","Operating System","3","5"},
+            {"21CSC203P","Advanced Programming Practice","3","6"}
+        };
+        for (String[] r : rows) {
+            boolean semesterFinal = !"21DCS201P".equals(r[0]) && !"21CSC203P".equals(r[0]);
+            // Seed only missing fallback rows. An administrator's verified catalogue must not be
+            // overwritten each time the application starts.
+            jdbc.update("INSERT IGNORE INTO academic_subjects(subject_code,subject_name,semester_final_available,repository_available,academic_intelligence_available,semester_number,display_order) VALUES(?,?,?,?,?,?,?)", r[0], r[1], semesterFinal, true, true, Integer.parseInt(r[2]), Integer.parseInt(r[3]));
+        }
+    }
+
+}

@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXORA | Confirm logout</title>
+<link rel="stylesheet" href="/css/auth.css?v=20261013-final-review-r2"><link rel="stylesheet" href="/css/nexora-ui.css?v=20261013-final-review-r2">
+<style>.logout-actions{display:flex;gap:12px;margin-top:22px}.logout-actions a,.logout-actions button{flex:1;text-align:center;text-decoration:none;border:1px solid #254366;border-radius:10px;padding:12px;color:#fff;background:#071a2b;font:inherit;cursor:pointer}.logout-actions button{background:linear-gradient(100deg,#5425f5,#6c19d2);border-color:#6c19d2;font-weight:700}.logout-symbol{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#4b122a;color:#ff7e9a;font-size:26px;margin:8px auto 18px}.auth-card{text-align:center}.auth-card p{line-height:1.6}</style>
+</head><body><main class="auth-shell"><section class="auth-card"><a class="auth-brand" href="/dashboard"><img src="/images/nexora-logo.svg?v=20261011-brand6" alt="NEXORA"></a><div class="logout-symbol" aria-hidden="true">⇥</div><h1>Log out of NEXORA?</h1><p class="muted">You will leave the current session. For local review mode, you can explicitly start a new review session after signing out.</p><div class="logout-actions"><a href="/dashboard">Cancel</a><form method="post" action="/logout" style="flex:1"><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><button type="submit" style="width:100%">Confirm logout</button></form></div></section></main></body></html>

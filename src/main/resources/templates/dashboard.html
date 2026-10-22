@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#060914">
+    <title>NEXORA | Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css?v=20261013-final-review-r2">
+</head>
+<body class="nx-dashboard">
+
+<div class="dashboard-shell">
+    <aside class="sidebar">
+        <a class="brand" href="/dashboard" aria-label="NEXORA dashboard">
+            <img src="/images/nexora-logo.svg?v=20261011-brand6" alt="NEXORA">
+        </a>
+        <nav aria-label="NEXORA navigation"><a href="/dashboard" class="active" aria-current="page"><span aria-hidden="true">⌂</span><b>Dashboard</b></a><a href="/career"><span aria-hidden="true">✦</span><b>Career Guidance</b></a><a href="/academic"><span aria-hidden="true">◈</span><b>Academic Development</b></a><a href="/career-selection"><span aria-hidden="true">◎</span><b>Career Selection</b></a><a href="/development-gps"><span aria-hidden="true">↗</span><b>Development GPS</b></a><a href="/opportunities"><span aria-hidden="true">▣</span><b>Opportunities Hub</b></a><a href="/recommended-courses"><span aria-hidden="true">✧</span><b>Recommended Courses</b></a><a href="/achievements"><span aria-hidden="true">✹</span><b>Achievements</b></a><a href="/integrations"><span aria-hidden="true">⌁</span><b>Connections</b></a><a href="/grade-calculator"><span aria-hidden="true">∑</span><b>SGPA / CGPA Calculator</b></a></nav>
+        <div class="sidebar-bottom"><a href="/settings"><span aria-hidden="true">⚙</span><b>Settings</b></a><a href="/logout/confirm" class="sidebar-logout" aria-label="Log out of NEXORA"><span aria-hidden="true">⇥</span><b>Logout</b></a></div>
+    </aside>
+
+    <main class="main">
+
+        <section class="dashboard">
+            <div class="welcome">
+                <div class="welcome-label">WELCOME BACK</div>
+                <h1><span th:text="${greeting}">Good Morning</span>, <strong th:text="${student.fullName}">Student</strong>!</h1>
+                <div class="student-identity-strip" aria-label="Student details">
+                    <span><small>Registration No.</small><strong th:text="${student.registrationNo}">RA000000000000</strong></span>
+                    <span><small>SRM Email</small><strong th:text="${student.collegeEmail}">student@srmuniv.edu.in</strong></span>
+                    <span><small>Program / Branch</small><strong th:text="${(student.program == null or #strings.isEmpty(student.program) ? 'B.Tech' : student.program) + ' · ' + (student.department == null or #strings.isEmpty(student.department) ? 'CSE' : student.department)}">B.Tech · CSE</strong></span>
+                    <span><small>Year / Semester</small><strong th:text="${academicYearLabel + ' · ' + semesterLabel}">2nd Year · 3rd Semester</strong></span>
+                    <span><small>Year of Passing</small><strong th:text="${student.batchEndYear}">2029</strong></span>
+                </div>
+            </div>
+
+            <section class="dashboard-xp" aria-labelledby="dashboard-xp-title">
+                <div class="dashboard-xp-head"><div><span class="dashboard-xp-kicker">CONTRIBUTOR REWARDS</span><h2 id="dashboard-xp-title">My XP &amp; Redeem</h2><p>XP is calculated from recorded backend events. Only approved unique academic contributions count towards redemption.</p></div><div class="dashboard-xp-total"><span>Total XP</span><strong th:text="${totalXp}">0</strong></div></div>
+                <div class="dashboard-xp-stats"><div><span>Contribution XP</span><strong th:text="${contributionXp}">0</strong></div><div><span>Available to redeem</span><strong th:text="${availableContributionXp}">0</strong></div><div><span>Reward</span><strong th:text="${'₹' + rewardAmount + ' for ' + rewardThreshold + ' XP'}">₹25 for 50 XP</strong></div></div>
+                <div class="dashboard-xp-alert success" th:if="${rewardRequested}" role="status">Reward request submitted. Keep your one-time code and wait for administrator verification.</div>
+                <div class="dashboard-xp-alert danger" th:if="${rewardError == 'upi'}" role="alert">Enter a valid UPI ID, for example name@bank.</div><div class="dashboard-xp-alert danger" th:if="${rewardError == 'balance'}" role="alert">You do not have enough available contribution XP for this reward.</div><div class="dashboard-xp-alert danger" th:if="${rewardError == 'invalid'}" role="alert">We couldn't submit the request. Refresh the page and try again.</div>
+                <form method="post" action="/xp/redeem" class="dashboard-xp-form" th:if="${availableContributionXp >= rewardThreshold}"><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"><label for="dashboardUpiId">UPI ID for reward payout</label><input id="dashboardUpiId" name="upiId" maxlength="255" required autocomplete="off" placeholder="name@bank"><button type="submit">Request ₹25 reward</button><small>This submits a request only. Payment is manually reviewed by an administrator.</small></form>
+                <div class="dashboard-xp-locked" th:if="${availableContributionXp < rewardThreshold}"><strong>Redemption not unlocked yet</strong><span th:text="${'You need ' + (rewardThreshold - availableContributionXp) + ' more available contribution XP.'}">Earn more approved contribution XP to unlock redemption.</span></div>
+                <div class="dashboard-xp-history" th:if="${!#lists.isEmpty(xpEvents)}"><h3>Recent XP activity</h3><div class="dashboard-xp-event" th:each="event : ${xpEvents}"><span th:text="${event.description == null || event.description.isBlank() ? event.eventType : event.description}">Approved contribution</span><strong th:text="${'+' + event.xp + ' XP'}">+10 XP</strong></div></div>
+                <div class="dashboard-xp-history" th:if="${!#lists.isEmpty(redemptions)}"><h3>Reward requests</h3><div class="dashboard-xp-event" th:each="claim : ${redemptions}"><span th:text="${claim.rewardCode + ' · ' + claim.status}">Reward request</span><strong th:text="${'₹' + claim.payoutAmount}">₹25</strong></div></div>
+            </section>
+
+        </section>
+    </main>
+</div>
+</body>
+</html>

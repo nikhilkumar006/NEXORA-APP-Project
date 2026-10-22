@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050b17">
+  <title th:text="${'NEXORA | ' + (pageTitle ?: 'Career Guidance')}">NEXORA | Career Guidance</title>
+  <link rel="stylesheet" href="/css/dashboard.css?v=20261013-career-fields-r3">
+  <link rel="stylesheet" href="/css/nexora-ui.css?v=20261013-career-fields-r3">
+  <link rel="stylesheet" href="/css/career-explorer.css?v=20261013-career-fields-r3">
+<style>
+.career-catalogue-intro{padding:22px 24px;margin:0 0 20px;border:1px solid #263b69;border-radius:16px;background:radial-gradient(500px 180px at 85% 0%,rgba(76,50,190,.18),transparent 65%),linear-gradient(135deg,#0a1c30,#061321)}
+.career-catalogue-intro h1{font-size:clamp(24px,3vw,34px);margin:8px 0;color:#f3f6ff;letter-spacing:-.035em}
+.career-catalogue-intro p{margin:0;max-width:850px;color:#a9bfd8;font-size:13px;line-height:1.65}
+
+.live-market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.live-market-card{min-width:0;border:1px solid #1b3d5b;border-radius:11px;padding:13px;background:linear-gradient(145deg,#0a1b2f,#06101f)}.live-market-card small{display:block;color:#8fa9c7;font-size:10px;margin-bottom:7px}.live-market-card strong{display:block;font-size:14px;color:#e6f2ff;line-height:1.45;overflow-wrap:anywhere}.live-market-footer{margin-top:12px;padding:10px 12px;border:1px solid #183b59;border-radius:9px;background:#071a2c;color:#92abc8;font-size:10px;line-height:1.7}.live-market-footer a{color:#b9adff;text-decoration:none}.live-market-latest{margin-top:12px;border:1px solid #183b59;border-radius:10px;padding:13px;background:#061526}.live-market-latest h3{font-size:13px;margin:0 0 8px}.live-market-job{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #17334d}.live-market-job b{display:block;font-size:11px}.live-market-job small{display:block;font-size:10px;color:#91abc6;margin-top:4px}.live-market-job a{color:#b9adff;font-size:10px;text-decoration:none;white-space:nowrap}@media(max-width:760px){.live-market-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.live-market-job{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body class="nx-dashboard career-explorer-page">
+
+<div class="dashboard-shell">
+  <aside class="sidebar" aria-label="NEXORA main navigation">
+    <a class="brand" href="/dashboard" aria-label="NEXORA Dashboard"><img src="/images/nexora-logo.svg?v=20261013-career-fields-r3" alt="NEXORA"></a>
+    <nav aria-label="NEXORA modules">
+      <a href="/dashboard"><span aria-hidden="true">⌂</span><b>Dashboard</b></a>
+      <a href="/career" class="active" th:attr="aria-current=${pageType == 'home' ? 'page' : null}"><span aria-hidden="true">✦</span><b>Career Guidance</b></a>
+      <a href="/academic"><span aria-hidden="true">◈</span><b>Academic Development</b></a>
+      <a href="/career-selection"><span aria-hidden="true">◎</span><b>Career Selection</b></a>
+      <a href="/development-gps"><span aria-hidden="true">↗</span><b>Development GPS</b></a>
+      <a href="/opportunities"><span aria-hidden="true">▣</span><b>Opportunities Hub</b></a>
+      <a href="/recommended-courses"><span aria-hidden="true">✧</span><b>Recommended Courses</b></a>
+      <a href="/achievements"><span aria-hidden="true">✹</span><b>Achievements</b></a>
+      <a href="/integrations"><span aria-hidden="true">⌁</span><b>Connections</b></a>
+    <a href="/grade-calculator"><span aria-hidden="true">∑</span><b>SGPA / CGPA Calculator</b></a></nav>
+    <div class="sidebar-bottom">
+      <a href="/settings"><span aria-hidden="true">⚙</span><b>Settings</b></a><a href="/logout/confirm" class="sidebar-logout" aria-label="Log out of NEXORA"><span aria-hidden="true">⇥</span><b>Logout</b></a>
+      
+    </div>
+  </aside>
+
+  <main class="main career-explorer-main">
+
+    <section class="career-explorer-content">
+      <div class="career-breadcrumb" th:if="${pageType != 'home'}"><a href="/career">Career Guidance</a><span>›</span><span th:text="${pageTitle}">Role</span></div>
+
+      <section class="career-home" th:if="${pageType == 'home'}">
+        <header class="career-catalogue-intro">
+          <span class="career-eyebrow">CSE CAREER DIRECTORY</span>
+          <h1>Explore careers in Computer Science</h1>
+          <p>Choose a career field below to see only the job roles that belong to it.</p>
+        </header>
+
+        <section class="explorer-section" aria-labelledby="career-fields-heading">
+          <div class="explorer-section-heading">
+            <div>
+              <span class="career-eyebrow">CAREER FIELDS</span>
+              <h2 id="career-fields-heading">Choose a career field</h2>
+              <p>Every field opens its own list of relevant roles.</p>
+            </div>
+            <span class="section-count" th:text="${#lists.size(directoryFamilies) + ' fields'}">8 fields</span>
+          </div>
+          <div class="career-family-grid">
+            <a class="family-card" th:each="family : ${directoryFamilies}"
+               th:href="@{/career/family/{slug}(slug=${family.slug})}">
+              <span class="family-symbol" aria-hidden="true"
+                    th:text="${family.name.startsWith('Data') ? '∑' : (family.name.startsWith('Cloud') ? '⌁' : (family.name.startsWith('Security') ? '⬡' : (family.name.startsWith('Quality') ? '✓' : (family.name.startsWith('Mobile') ? '▣' : (family.name.startsWith('Product') ? '◇' : (family.name.startsWith('Systems') ? '⚙' : '⌘'))))))}">⌘</span>
+              <span class="family-card-title" th:text="${family.name}">Software Engineering</span>
+              <span class="family-card-description" th:text="${family.description}">Career field description</span>
+              <span class="family-card-link">
+                <span th:text="${familyRoleCounts[family.slug] + ' roles'}">12 roles</span>
+                <b aria-hidden="true">→</b>
+              </span>
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <section class="career-detail-page" th:if="${pageType == 'family'}">
+        <header class="detail-hero">
+          <div>
+            <span class="career-eyebrow">CSE CAREER FIELD</span>
+            <h1 th:text="${family.name}">Software Engineering</h1>
+            <p th:text="${family.description}">Career field description</p>
+          </div>
+          <a class="outline-action" href="/career">All careers <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <section class="detail-panel" aria-labelledby="family-roles-heading">
+          <div class="explorer-section-heading">
+            <div>
+              <span class="career-eyebrow">AVAILABLE ROLE TYPES</span>
+              <h2 id="family-roles-heading" th:text="${'Roles in ' + family.name}">Roles in this career field</h2>
+              <p th:text="${roleCount + ' role types in this field. Choose a role to view its description and preparation path.'}">Role list</p>
+            </div>
+          </div>
+          <label class="role-filter-label" for="roleFilter">Find a role in this field</label>
+          <input id="roleFilter" class="role-filter" type="search"
+                 placeholder="Search roles in this field…" autocomplete="off">
+          <div class="role-catalogue" id="familyRoleCatalogue">
+            <a class="role-catalogue-row" th:each="role : ${rolesInFamily}"
+               th:href="@{/career/role/{slug}(slug=${role.slug})}"
+               th:data-search="${role.searchText}" th:data-role-title="${role.title}">
+              <span class="role-catalogue-main">
+                <b th:text="${role.title}">Software Engineer</b>
+              </span>
+              <span class="role-arrow" aria-hidden="true">→</span>
+            </a>
+            <p class="role-empty" id="roleEmpty" hidden>No roles match this search.</p>
+          </div>
+          <p class="role-empty" th:if="${#lists.isEmpty(rolesInFamily)}">No roles are currently mapped to this career field. Return to all careers to choose another field.</p>
+        </section>
+      </section>
+
+      <section class="career-detail-page" th:if="${pageType == 'role'}">
+        <header class="detail-hero"><div><span class="career-eyebrow" th:text="${role.family}">Software Engineering</span><h1 th:text="${role.title}">Software Engineer</h1><p th:text="${role.responsibilities}">Role overview</p><div class="alias-list" th:if="${!#lists.isEmpty(role.aliases)}"><span>Also searched as</span><span class="alias-chip" th:each="alias : ${role.aliases}" th:text="${alias}">Alias</span></div><div class="detail-actions" style="margin-top:12px"><a class="outline-action" th:href="@{https://www.onetonline.org/find/quick(s=${role.title})}" target="_blank" rel="noopener noreferrer">Cross-check tasks and skills on O*NET ↗</a></div></div><a class="primary-action" th:href="@{/career-selection(role=${role.slug})}">Use in Career Selection <span aria-hidden="true">→</span></a></header>
+        <div class="role-detail-grid">
+          <section class="detail-panel role-snapshot-panel">
+            <div class="explorer-section-heading"><div><span class="career-eyebrow">MARKET EVIDENCE</span><h2>What the dataset supports</h2></div></div>
+            <form class="role-location-filter" method="get" th:action="@{/career/role/{slug}(slug=${role.slug})}"><label for="roleLocation">Filter evidence by technology location</label><select id="roleLocation" name="location"><option value="all" th:selected="${selectedRoleLocation == 'all'}">All locations</option><option th:each="locationOption : ${directoryLocations}" th:value="${locationOption.slug}" th:text="${locationOption.name}" th:selected="${selectedRoleLocation == locationOption.slug}">Bengaluru</option></select><button type="submit" class="outline-action">Apply</button></form>
+            <div th:if="${roleMarketEvidenceVisible}" class="evidence-metric-grid">
+              <article><span>India posting-volume rank</span><strong th:text="${role.marketEvidence.demandRank}">#1</strong><small>Tevos H1 2026 corpus · Jan–Apr 2026</small></article>
+              <article><span>Bengaluru disclosed salary p50</span><strong th:text="${role.marketEvidence.salaryP50}">—</strong><small th:text="${role.marketEvidence.salaryNote}">Median of disclosed compensation</small></article>
+              <article><span>Snapshot period</span><strong th:text="${role.marketEvidence.sourceDate}">Apr 2026</strong><small>Published snapshot, not real-time data</small></article>
+              <article><span>Top skill in the report</span><strong th:text="${role.marketEvidence.topSkill}">—</strong><small>A source-reported skill signal, not an employer mandate</small></article>
+            </div>
+            <p class="source-footnote" th:if="${roleMarketEvidenceVisible}">Rank is based on India posting volume; salary is the reported p50 for disclosed compensation in Bengaluru in January–April 2026, not an average or a guaranteed offer.</p>
+            <a class="source-link" th:if="${roleMarketEvidenceVisible}" th:href="${role.marketEvidence.sourceUrl}" target="_blank" rel="noopener noreferrer">Open source: <span th:text="${role.marketEvidence.source}">Source</span> ↗</a>
+          </section>
+          <section class="detail-panel"><span class="career-eyebrow">SKILL MAP</span><h2 th:text="${role.marketEvidence != null ? 'Skills named in the report' : 'Starter skills to explore'}">Skills</h2><p class="panel-intro" th:text="${role.marketEvidence != null ? 'These are source-listed skills for the report’s role grouping. They are not mandatory requirements for any specific employer.' : 'These are general orientation suggestions from the career catalogue—not verified mandatory or preferred skills for a particular employer.'}">Skill provenance</p><div class="detail-skill-list"><span class="detail-skill-chip" th:each="skill : ${role.skills}" th:text="${skill}">Python</span></div><p class="source-footnote">Employer requirements are only shown when an exact job description or hiring-programme source has been indexed. Generic skills must not be treated as eligibility criteria.</p></section>
+        </div>
+        <section class="detail-panel next-steps-panel"><span class="career-eyebrow">PREPARATION</span><h2>Suggested next steps</h2><p th:text="${role.entryPath}">Preparation path</p><div class="detail-actions"><a class="outline-action" href="/career-selection">Review Career Selection ↗</a></div></section>
+        <section class="detail-panel"><span class="career-eyebrow">ACADEMIC ELIGIBILITY CHECKLIST</span><h2>Baseline readiness for this role</h2><p class="panel-intro">These fallback benchmarks are planning estimates, not verified requirements for a named employer or vacancy. Exact company and batch criteria are shown separately when source-verified evidence exists.</p><div class="table-wrap"><table><thead><tr><th>Factor</th><th>Planning benchmark</th><th>Guidance</th></tr></thead><tbody><tr th:each="item : ${eligibilityPlanningBenchmarks}"><td th:text="${item['metric']}">Class 10 marks</td><td th:text="${item['target']}">60% or above</td><td th:text="${item['note']}">Verify the exact hiring notice.</td></tr></tbody></table></div></section>
+        <section class="detail-panel" th:if="${!#lists.isEmpty(verifiedCompanyRoleEvidence)}"><span class="career-eyebrow">EMPLOYER-SPECIFIC EVIDENCE</span><h2>Verified criteria for this role</h2><p class="panel-intro">The following records belong to the exact role and named hiring programme / passing year. They are criteria, not vacancy listings.</p><div class="table-wrap"><table><thead><tr><th>Employer / programme</th><th>YOP</th><th>Criterion</th><th>Requirement</th><th>Source</th></tr></thead><tbody><tr th:each="item : ${verifiedCompanyRoleEvidence}"><td><b th:text="${item.companyName}">Employer</b><br><small th:text="${item.hiringProgram}">Programme</small></td><td th:text="${item.yop}">2029</td><td th:text="${item.displayMetric()}">CGPA</td><td><span th:text="${item.displayTarget()}">—</span><small th:text="${item.mandatory ? ' · Mandatory' : ' · Stated / preferred'}"> · Mandatory</small></td><td><a class="source-link" th:href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" th:text="${item.sourceTitle}">Direct source</a><br><small th:text="${item.observedAt}">Observed date</small></td></tr></tbody></table></div></section>
+        <section class="explorer-section"><div class="explorer-section-heading"><div><span class="career-eyebrow">RELATED ROLES</span><h2>Explore adjacent roles</h2></div></div><div class="related-role-list"><a class="role-catalogue-row" th:each="related : ${relatedRoles}" th:href="@{/career/role/{slug}(slug=${related.slug})}"><span class="role-catalogue-main"><b th:text="${related.title}">Related role</b><small th:text="${related.family}">Family</small></span><span class="role-arrow" aria-hidden="true">→</span></a></div></section>
+      </section>
+
+      <section class="career-detail-page" th:if="${pageType == 'company'}">
+        <header class="detail-hero company-detail-hero"><div><span class="career-eyebrow">COMPANY DIRECTORY</span><h1 th:text="${company.name}">Company</h1><p>Verified company identity and official destinations only. This profile does not claim that a specific vacancy is open.</p></div><span class="company-large-mark" th:text="${company.name.substring(0,1)}">C</span></header>
+        <section class="detail-panel company-profile-panel"><span class="career-eyebrow">OFFICIAL DESTINATIONS</span><h2>Company links</h2><div class="company-links"><a th:href="${company.homepage}" target="_blank" rel="noopener noreferrer"><span><b>Company website</b><small th:text="${company.homepage}">Company homepage</small></span><b aria-hidden="true">↗</b></a><a th:href="${company.careersUrl}" target="_blank" rel="noopener noreferrer"><span><b>General careers portal</b><small th:text="${company.careersUrl}">Company careers portal</small></span><b aria-hidden="true">↗</b></a></div><p class="alias-note" th:if="${!#lists.isEmpty(company.aliases)}"><b>Known names / aliases:</b> <span th:text="${#strings.listJoin(company.aliases, ', ')}">Alias</span></p></section>
+        <section class="detail-panel"><span class="career-eyebrow">ACADEMIC ELIGIBILITY CHECKLIST</span><h2>Baseline readiness for roles at this company</h2><p class="panel-intro">Use these only as a planning checklist where no exact role/programme/batch rule has been verified. They are not company-published cutoffs. Source-verified company criteria appear separately below when available.</p><div class="table-wrap"><table><thead><tr><th>Factor</th><th>Planning benchmark</th><th>Guidance</th></tr></thead><tbody><tr th:each="item : ${eligibilityPlanningBenchmarks}"><td th:text="${item['metric']}">Class 10 marks</td><td th:text="${item['target']}">60% or above</td><td th:text="${item['note']}">Verify the exact hiring notice.</td></tr></tbody></table></div></section>
+        <section class="detail-panel" th:if="${!#lists.isEmpty(verifiedCompanyRoleEvidence)}"><span class="career-eyebrow">SOURCE-VERIFIED ROLE CRITERIA</span><h2>Role requirements recorded for this company</h2><p class="panel-intro">These are eligibility details captured from the specific source shown on each row. They do not mean the role is currently vacant. Missing criteria are not inferred from other programmes.</p><div class="table-wrap"><table><thead><tr><th>Role / programme</th><th>Year of passing</th><th>Criterion</th><th>Published requirement</th><th>Requirement type</th><th>Source</th></tr></thead><tbody><tr th:each="item : ${verifiedCompanyRoleEvidence}"><td><b th:text="${item.roleTitle}">Role</b><br><small th:text="${item.hiringProgram}">Hiring programme</small></td><td th:text="${item.yop}">2029</td><td th:text="${item.displayMetric()}">CGPA</td><td th:text="${item.displayTarget()}">—</td><td th:text="${item.mandatory ? 'Mandatory' : 'Stated / preferred'}">Mandatory</td><td><a class="source-link" th:href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" th:text="${item.sourceTitle}">Direct source</a><br><small th:text="${item.observedAt}">Observed date</small></td></tr></tbody></table></div></section>
+      </section>
+
+      <section class="career-detail-page" th:if="${pageType == 'location'}">
+        <header class="detail-hero"><div><span class="career-eyebrow">LOCATION EXPLORER</span><h1 th:text="${location.name}">Location</h1><p th:text="${location.evidenceNote}">Location evidence notes.</p></div><a class="outline-action" href="/career">All locations <span aria-hidden="true">↗</span></a></header>
+        <section class="detail-panel" th:if="${!#lists.isEmpty(rolesForLocation)}"><span class="career-eyebrow">DATED ROLE SNAPSHOT</span><h2>Roles with Bengaluru salary evidence</h2><p class="panel-intro">These report records have a Bengaluru p50 disclosed compensation snapshot. Their ranks refer to India-wide posting volume, not Bengaluru vacancy counts.</p><div class="role-catalogue"><a class="role-catalogue-row" th:each="role : ${rolesForLocation}" th:href="@{/career/role/{slug}(slug=${role.slug})}"><span class="role-catalogue-main"><b th:text="${role.title}">Role</b><small th:text="${'India posting-volume rank ' + role.marketEvidence.demandRank + ' · p50 disclosed compensation in Bengaluru'}">Source detail</small></span><span class="role-evidence-pill" th:text="${role.marketEvidence.salaryP50}">—</span><span class="role-arrow" aria-hidden="true">→</span></a></div><a class="source-link" href="https://gettevos.com/research-india-tech-hiring.php" target="_blank" rel="noopener noreferrer">Source: Tevos State of Tech Hiring India H1 2026 ↗</a></section>
+      </section>
+
+      <section class="career-detail-page" th:if="${pageType == 'skill'}">
+        <header class="detail-hero"><div><span class="career-eyebrow">SKILL EXPLORER</span><h1 th:text="${skill.name}">Skill</h1><p>Explore related roles and open each role profile to review the source coverage. A skill appearing in a general role taxonomy does not make it mandatory for an employer.</p></div></header>
+      </section>
+    </section>
+  </main>
+</div>
+
+<script src="/js/career-explorer.js?v=20261013-career-fields-r3" defer></script>
+<script src="/js/nexora-ui.js?v=20261013-career-fields-r3" defer></script>
+</body>
+</html>

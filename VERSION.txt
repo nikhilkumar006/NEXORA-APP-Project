@@ -1,0 +1,2 @@
+NEXORA-2026-10-13-CAREER-GUIDANCE-FIX-R4
+Career Guidance now shows only CSE career fields and each field's mapped roles. Also fixes AcademicPageReadCache lambda compilation error.

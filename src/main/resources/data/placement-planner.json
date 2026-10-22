@@ -1,0 +1,2385 @@
+{
+  "years": {
+    "2028": {
+      "Marquee": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "85+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "8.5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP)",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Linkage to skill matrix\n(Refer Drive Link)",
+          "target": "https://drive.google.com/drive/folders/1c1dAo08PSUS3-nmJdvf0oOj6Tb6shPxG?usp=drive_link\n(Common to all)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "3 (Atleast 1 in Fortune 500 Company)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "Min 2 Domain specific and 1 other vertical",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Mandatory (Any numbers)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "3",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Excellent – 5 meaningful repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "2 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "30",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "25 (15 - Technical & 10 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 10",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 10",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Industry-standard  ATS optimized",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Excellent",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "6+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "250+ verified problems (H-150, M-60, E- 40)\n1. Java Programming\n2. DSA & Oops Concepts\n3. Python Programming\n4. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "150+ Min Ctd. (H-75, M-50, E-25)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "4.5*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.85",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain-Specific Skills",
+          "target": "https://drive.google.com/drive/folders/1dzReaosRX5Gy43LCOmmz3G4YpI3z_XmY?usp=drive_link",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "3 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "5",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Regular participation is MANDATORY\n(Any number)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Completely updated",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.85",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "25",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Super Dream": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "75+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP)",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "3 Internship",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "Min 2 Domain specific",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Min 1",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "2",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Strong – 4 repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "1 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Strongly preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "25",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "20 (12 - Technical & 8 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Professional  ATS optimized",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Excellent",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "4+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "150+ verified problems (H-75, M-50, E-25)\n1. Java Programming\n2. DSA & Oops Concepts\n3. Python Programming\n4. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "100+ Min Ctd. (H-45, M-30, E-25)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "4*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.75",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "3",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "2-3 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "3",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Regular participation\n(Any number)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Completely updated",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "20",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Dream": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "65+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "7.5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP)",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "2 Internship",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "Min 1 Domain specific",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Min 1",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "2",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Active – 2–3 repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "1 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "20",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "15 (10 - Technical & 5 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Placement-ready",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Good",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "3+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "100+ verified problems (H-40, M-30, E-30)\n1. Python Programming\n2. DSA & Oops Concepts\n3. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "60+ Min Ctd. (H-25, M-15, E-20)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "3*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "Min 1 -2 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "At least 4-5 contests",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Completely updated",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.7",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Standard": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "55+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil / As per Company Criteria",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP)",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "1 Internship",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "1–2 projects any domain",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Optional",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "1",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Basic – 1 repository",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "Optional",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Optional",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "15",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "10 (3 - Technical & 07- Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Basic Readiness",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Satisfactory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "2+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "50+ verified problems (H-10, M-15, E-25)\n1. Python Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "30+ Min Ctd. (H-5, M-10, E-15)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "2*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.5",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "Min 1 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Basic exposure",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e- Portfolio",
+          "target": "Completely updated",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ]
+    },
+    "2029": {
+      "Marquee": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "85+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "8.5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Linkage to skill matrix\n(Refer Drive Link)",
+          "target": "https://drive.google.com/drive/folders/1c1dAo08PSUS3-nmJdvf0oOj6Tb6shPxG?usp=drive_link\n(Common to all)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship \n(Domain Specific)",
+          "target": "5 (Atleast 2 in Fortune 500 Company)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "3 strong projects \n(Min 2 Domain specific and 1 other vertical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Mandatory (Min 3)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Excellent – 5 meaningful repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "2 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Portfolio",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "50",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "30 (20 - Technical & 10 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "40",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "25",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Industry-standard  ATS optimized",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Excellent",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "8+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "350+ verified problems (H-200, M-70, E- 30)\n1. Java Programming\n2. DSA & Oops Concepts\n3. Python Programming\n4. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "250+ Min Ctd. (H-100, M-60, E-40)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "4.5*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.85",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain-Specific Skills",
+          "target": "https://drive.google.com/drive/folders/1dzReaosRX5Gy43LCOmmz3G4YpI3z_XmY?usp=drive_link",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "5 (Atleast 2 in Fortune 500 Company)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "4–6 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "10",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Regular participation is MANDATORY\n(Any number)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "4 preferred",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e-Portfolio",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.85",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "30",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 25",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 25",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Super Dream": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "75+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "7.5 - 8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship \n(Domain Specific)",
+          "target": "4 (Atleast 1 in Fortune 500 Company)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "3 strong projects",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Min 2-3",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "3",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Strong – 4 repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "1 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Portfolio",
+          "target": "Strongly preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "40",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "25 (15 - Technical & 10 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "30",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "20",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Professional  ATS optimized",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Excellent",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "6+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "250+ verified problems (H-100, M-60, E-40)\n1. Java Programming\n2. DSA & Oops Concepts\n3. Python Programming\n4. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "150+ Min Ctd. (H-75, M-45, E-30)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "4*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "4 (Atleast 1 in Fortune 500 Company)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "3–4 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Regular participation\n(Any number)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "3 preferred",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e-Portfolio",
+          "target": "Strongly preferred",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "25",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 20",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 20",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Dream": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "65+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "6.5 - 7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship \n(Domain Specific)",
+          "target": "3 Internship",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "2 strong projects",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Min 2",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "2",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Active – 2–3 repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "1 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Portfolio",
+          "target": "Preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "35",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "20 (12 - Technical & 08 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "20",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "15",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Placement-ready",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Good",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "5+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "150+ verified problems (H-75, M-45, E-30)\n1. Python Programming\n2. DSA & Oops Concepts\n3. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "100+ Min Ctd. (H-30, M-45, E-25)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "3*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.75",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "3",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "2–3 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "At least 4-5 contests",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "3 preferred",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e-Portfolio",
+          "target": "Preferred",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.7",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "20",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 15",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 15",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Standard": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "60+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil / As per Company Criteria",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship \n(Domain Specific)",
+          "target": "2 Internship",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "1–2 projects",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain Specific Certification",
+          "target": "Optional",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "1",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Basic – 1 repository",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "Optional",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Portfolio",
+          "target": "Optional",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "20",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skills",
+          "target": "10 (5 - Technical & 5 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "10",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "10",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Basic Readiness",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Satisfactory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "2+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "100+ verified problems (H-20, M-55, E-25)\n1. Python Programming\n2. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "55+ Min Ctd. (H-15, M-25, E-15)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "2*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "2",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "1–2 relevant certifications",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "4",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Basic exposure",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "1 preferred",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e-Portfolio",
+          "target": "Optional",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "15",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 10",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 10",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ]
+    },
+    "2030": {
+      "Marquee": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "90+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "8.5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Linkage to skill matrix\n(Refer Drive Link)",
+          "target": "https://drive.google.com/drive/folders/1c1dAo08PSUS3-nmJdvf0oOj6Tb6shPxG?usp=drive_link\n(Common to all)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "6 (Atleast 3 in Fortune 500 Company)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects (Domain Specific)",
+          "target": "5 strong projects\n(Min 3 Domain specific and 2 other vertical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Excellent – 5 meaningful repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "3 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e -Portfolio",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "60",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation",
+          "target": "35 (20 - Technical & 15 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "45",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "40",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Industry-standard  ATS optimized",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Excellent",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "10+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "550+ verified problems (H-250, M-170, E- 130)\n1. Java Programming\n2. DSA & Oops Concepts\n3. Python Programming\n4. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "450+ Min Ctd. (H-200, M-160, E-140)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "4.5*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.85",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Domain-Specific Skills",
+          "target": "https://drive.google.com/drive/folders/1dzReaosRX5Gy43LCOmmz3G4YpI3z_XmY?usp=drive_link",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "10",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "Min 2-3 (Fortune 500 Company)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "7",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "15",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Regular participation is MANDATORY\n(Any number)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.85",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "40",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skill",
+          "target": "35 (20 - Technical & 15 - Non Technical)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 30",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 40",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Super Dream": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "80+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "7.5 - 8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "5 (Atleast 2 in Fortune 500 Company)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects (Domain Specific)",
+          "target": "4 strong projects\n(Min 2 Domain specific and 2 other vertical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "5",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Strong – 4 repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "2 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e -Portfolio",
+          "target": "Strongly preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "50",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation",
+          "target": "30 (20 - Technical & 10 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "30",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "35",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Professional  ATS optimized",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Excellent",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.9",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "8+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "450+ verified problems (H-175, M-145, E-130)\n1. Java Programming\n2. DSA & Oops Concepts\n3. Python Programming\n4. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "350+ Min Ctd. (H-150, M-125, E-75)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "4*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "Min 1 Fortune 500 Company & Tier 1/2 preferred",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "10",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Regular participation\n(Any number)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "30",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skill",
+          "target": "30 (20 - Technical & 10 - Non Technical)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 25",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 30",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Dream": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "70+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "6.5 - 7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "4 (Atleast 1 in Fortune 500 Company)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects (Domain Specific)",
+          "target": "3 strong projects\n(Min 2 Domain specific and 1 other vertical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "4",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Active – 2–3 repositories (MANDATORY)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "2 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e -Portfolio",
+          "target": "Preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.7",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "40",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation",
+          "target": "25 (15 - Technical & 10 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "25",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "25",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Placement-ready",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Good",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.85",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "7+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "250+ verified problems (H-120, M-80, E-50)\n1. DSA & Oops Concepts\n2. Python Programming\n3. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "250+ Min Ctd. (H-85, M-100, E-65)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "3*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.75",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "Tier 2/3 acceptable",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "8",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "At least 4-5 contests",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.7",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "25",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skill",
+          "target": "25 (15 - Technical & 10 - Non Technical)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 20",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 25",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ],
+      "Standard": [
+        {
+          "metric": "Overall Readiness Score (Out of 100)",
+          "target": "60+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "CGPA",
+          "target": "6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Active Arrears",
+          "target": "Nil / As per Company Criteria",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Aptitude Assessment (NEOPAT & FACEPREP",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Skills (Concern Department  support of NEOPAT)",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "3 (Atleast 1 in Fortune 500 Company)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects (Domain Specific)",
+          "target": "1–2 projects",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "2",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "GitHub",
+          "target": "Basic – 1 repository",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Implemented Projects",
+          "target": "Min 1 preferred",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "Completely Updated",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "e -Portfolio",
+          "target": "Optional",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skills",
+          "target": "0.6",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Group Discussion",
+          "target": "20",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation",
+          "target": "15 (08 - Technical & 07 - Non Technical)",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "10",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "20",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume",
+          "target": "Basic Readiness",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Professional Behaviour",
+          "target": "Satisfactory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Training Attendance",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "0.8",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Resume Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Profile Verification",
+          "target": "Mandatory",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Industry Exposure\nIV & professional events like contest or symposium",
+          "target": "5+",
+          "source": "SRMIST CORE placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding / Problem Solving Spec\n(Neopat , Code Tantra & FACEPREP)",
+          "target": "175+ verified problems (H-65, M-90, E-45)\n1. Python Programming\n4. C Programming",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LeetCode Target",
+          "target": "150+ Min Ctd. (H- 60, M-40, E-50)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HackerRank / Equivalent",
+          "target": "2*",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Coding Assessment \n(Neopat , Code Tantra & FACEPREP)",
+          "target": "0.6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Internship",
+          "target": "4",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Projects",
+          "target": "Genuine, verifiable internship",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Domain Certifications",
+          "target": "3",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Hackathon Participation",
+          "target": "5",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Competitive Programming Contest\n1. Technical \n2. Non Technical",
+          "target": "Basic exposure",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "LinkedIn Profile",
+          "target": "YES",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Communication Skill \n(Mettl or FACEPREP)",
+          "target": "0.6",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Presentation Skill",
+          "target": "15 (08 - Technical & 07 - Non Technical)",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Technical Mock Interview",
+          "target": "Min 10",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "HR Mock Interview",
+          "target": "Min 20",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        },
+        {
+          "metric": "Placement Assessment Attendance",
+          "target": "Mandatory",
+          "source": "SRMIST TRY placement planner (uploaded workbook)"
+        }
+      ]
+    }
+  },
+  "note": "Source-derived from the two user-provided SRMIST placement planner workbooks. Targets are internal planning benchmarks and should be confirmed with the SRMIST Career Development Centre; not a guarantee of company eligibility."
+}
